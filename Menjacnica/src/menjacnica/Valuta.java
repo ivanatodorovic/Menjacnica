@@ -1,6 +1,6 @@
 package menjacnica;
 
-import java.util.LinkedList;
+
 
 public class Valuta {
 
@@ -12,19 +12,25 @@ public String getNaziv() {
 	return naziv;
 }
 public void setNaziv(String naziv) {
+if(naziv == null || naziv.isEmpty())
+	throw new RuntimeException("Nije unet odgovarajuci naziv.");
 	this.naziv = naziv;
 }
 public String getSkraceniNaziv() {
 	return skraceniNaziv;
 }
 public void setSkraceniNaziv(String skraceniNaziv) {
-	this.skraceniNaziv = skraceniNaziv;
+if(skraceniNaziv == null ||  skraceniNaziv.isEmpty())	
+	throw new RuntimeException("Nije unet odgovarajuci skraaceni naziv.");
+this.skraceniNaziv = skraceniNaziv;
 }
 public Kurs getKurs() {
 	return kurs;
 }
 public void setKurs(Kurs kurs) {
-	this.kurs = kurs;
+if(kurs == null)
+	throw new RuntimeException(); 
+this.kurs = kurs;
 }	
 	
 	

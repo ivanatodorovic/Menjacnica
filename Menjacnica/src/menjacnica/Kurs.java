@@ -14,6 +14,8 @@ public double getKupovni() {
 }
 
 public void setKupovni(double kupovni) {
+if(kupovni < 0)
+	throw new RuntimeException("Kurs ne moze biti manji od nule.");
 	this.kupovni = kupovni;
 }
 
@@ -22,6 +24,9 @@ public double getProdajni() {
 }
 
 public void setProdajni(double prodajni) {
+	if(prodajni < 0)
+		throw new RuntimeException("Kurs ne moze biti manji od nule.");
+
 	this.prodajni = prodajni;
 }
 
@@ -30,6 +35,9 @@ public double getSrednji() {
 }
 
 public void setSrednji(double srednji) {
+	if(srednji < 0)
+		throw new RuntimeException("Kurs ne moze biti manji od nule.");
+
 	this.srednji = srednji;
 }
 
@@ -38,7 +46,16 @@ public GregorianCalendar getDatum() {
 }
 
 public void setDatum(GregorianCalendar datum) {
-	this.datum = datum;
+GregorianCalendar danasnji = new GregorianCalendar();
+int dan = danasnji.DAY_OF_MONTH;
+int mesec = danasnji.MONTH;
+int god = danasnji.YEAR;
+if(datum == null)
+	throw new RuntimeException("Datumm nije unet dobro.");
+if(!(god == datum.YEAR && mesec == datum.MONTH && dan == datum.DAY_OF_MONTH) )
+	throw new RuntimeException("Datum nije unet dobro.Mozete uneti danasnji datum");
+
+this.datum = datum;
 }
 
 @Override
