@@ -14,7 +14,7 @@ public String getNaziv() {
 public void setNaziv(String naziv) {
 if(naziv == null || naziv.isEmpty())
 	throw new RuntimeException("Nije unet odgovarajuci naziv.");
-	this.naziv = naziv;
+this.naziv = naziv;
 }
 public String getSkraceniNaziv() {
 	return skraceniNaziv;

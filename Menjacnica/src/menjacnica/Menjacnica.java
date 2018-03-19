@@ -113,6 +113,6 @@ public class Menjacnica implements IMenjacnica {
 
 	@Override
 	public String toString() {
-		return "Menjacnica [ime=" + ime + ", valute=" + valute + "]";
+		return "Menjacnica: " + ime + ", valute: " + valute ;
 	}
 }
